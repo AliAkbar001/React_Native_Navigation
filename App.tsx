@@ -16,26 +16,34 @@ const Stack = createNativeStackNavigator<RootStackParamList>()
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Navigator initialRouteName='Home' 
+      screenOptions={{
+        // headerShown: false,
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'tomato' },
+      }}>
         <Stack.Screen
           name='Home'
           component={Home}
           options={{
-            title:"Trending Products"
+            title:"Trending Products",
+            gestureEnabled: true
           }} 
         />
         <Stack.Screen
           name='Details'
           component={Details}
           options={{
-            title:"Product Details"
+            title:"Product Details",
+            gestureEnabled: true
           }} 
         />
          <Stack.Screen
           name='Contact'
           component={Contact}
           options={{
-            title:"Contact Info"
+            title:"Contact Info",
+            gestureEnabled: true
           }} 
         />
       </Stack.Navigator>
